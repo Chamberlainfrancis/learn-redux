@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { removeTodo } from "../features/todo/TodoSlice";
+// import { useNavigate } from "react-router-dom";
 
 const Todo = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const todos = useSelector((state) => state.todo.todos);
   const dispatch = useDispatch();
@@ -93,7 +92,7 @@ const Todo = () => {
                     Edit <span className="visually-hidden">Eat</span>
                   </button>
                   <button
-                    onClick={() => dispatch(removeTodo(todo.id))}
+                    onClick={() => removeTodo(todo.id)}
                     type="button"
                     className="btn btn__danger"
                   >
